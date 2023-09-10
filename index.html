@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess By Digital Dynamo!</title>
+    <style>
+        body{
+            background-color: #081b29;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .board{
+            width: 650px;
+            height: 650px;
+            box-shadow: 0px 0px 30px #636262;
+        }
+        .row{
+            width: 100%;
+            height: 12.5%;
+            display: flex;
+            flex-direction: row;
+        }
+        .room{
+            width: 12.5%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        b{
+            font-size: 40px;
+        }
+        .black{
+            background-color: #966F33;
+        }
+        .black-start{
+            display: flex;
+            align-items: baseline;
+        }
+        .white{
+            background-color: rgb(158, 156, 156) ;
+        }
+        .white-start{
+            display: flex;
+            align-items: end;
+        }
+        .black-start b {
+            color: black;
+            cursor: pointer;
+            transform: rotate(-180deg);
+            margin:0;
+
+       }
+
+        .white-start b{
+            color: white;
+            cursor: pointer;
+            margin: 0;
+        }
+   
+        
+    </style>
+</head>
+<body>
+    <div class="board">
+        <div class="row">
+            <div class="white black-start A8 room piece" onclick="return showPath()"><b>&#9814;</b></div>
+            <div class="black black-start B8 room piece" onclick="return showPath()"><b>&#9816;</b></div>
+            <div class="white black-start C8 room piece" onclick="return showPath()"><b>&#9815;</b></div>
+            <div class="black black-start D8 room piece" onclick="return showPath()"><b>&#9813;</b></div>
+            <div class="white black-start E8 room piece" onclick="return showPath()"><b>&#9812;</b></div>
+            <div class="black black-start F8 room piece" onclick="return showPath()"><b>&#9815;</b></div>
+            <div class="white black-start G8 room piece" onclick="return showPath()"><b>&#9816;</b></div>
+            <div class="black black-start H8 room piece" onclick="return showPath()"><b>&#9814;</b></div>
+        </div>
+        <div class="row">                          
+            <div class="black black-start pawn  A7 room piece" onclick="return showPath()"><b>&#9817;</b></div>
+            <div class="white black-start pawn  B7 room piece" onclick="return showPath()"><b>&#9817;</b></div>
+            <div class="black black-start pawn  C7 room piece" onclick="return showPath()"><b>&#9817;</b></div>
+            <div class="white black-start pawn  D7 room piece" onclick="return showPath()"><b>&#9817;</b></div>
+            <div class="black black-start pawn  E7 room piece" onclick="return showPath()"><b>&#9817;</b></div>
+            <div class="white black-start pawn  F7 room piece" onclick="return showPath()"><b>&#9817;</b></div>
+            <div class="black black-start pawn  G7 room piece" onclick="return showPath()"><b>&#9817;</b></div>
+            <div class="white black-start pawn  H7 room piece" onclick="return showPath()"><b>&#9817;</b></div>
+        </div>
+        <div class="row">                     
+            <div class="white A6 room"></div>
+            <div class="black B6 room"></div>
+            <div class="white C6 room"></div>
+            <div class="black D6 room"></div>
+            <div class="white E6 room"></div>
+            <div class="black F6 room"></div>
+            <div class="white G6 room"></div>
+            <div class="black H6 room"></div>
+        </div>                     
+        <div class="row">                
+            <div class="black A5 room "></div>
+            <div class="white B5 room "></div>
+            <div class="black C5 room "></div>
+            <div class="white D5 room "></div>
+            <div class="black E5 room "></div>
+            <div class="white F5 room "></div>
+            <div class="black G5 room "></div>
+            <div class="white H5 room "></div>
+        </div>                      
+        <div class="row">                
+            <div class="white A4 room "></div>
+            <div class="black B4 room "></div>
+            <div class="white C4 room "></div>
+            <div class="black D4 room "></div>
+            <div class="white E4 room "></div>
+            <div class="black F4 room "></div>
+            <div class="white G4 room "></div>
+            <div class="black H4 room "></div>
+        </div>                      
+        <div class="row">
+            <div class="black A3 room "></div>
+            <div class="white B3 room "></div>
+            <div class="black C3 room "></div>
+            <div class="white D3 room "></div>
+            <div class="black E3 room "></div>
+            <div class="white F3 room "></div>
+            <div class="black G3 room "></div>
+            <div class="white H3 room "></div>
+        </div>                      
+        <div class="row">                                  
+            <div class="white A2 white-start pawn room piece " onclick="return showPath()"><b>&#9817;</b></div>
+            <div class="black B2 white-start pawn room piece " onclick="return showPath()"><b>&#9817;</b></div>
+            <div class="white C2 white-start pawn room piece " onclick="return showPath()"><b>&#9817;</b></div>
+            <div class="black D2 white-start pawn room piece " onclick="return showPath()"><b>&#9817;</b></div>
+            <div class="white E2 white-start pawn room piece " onclick="return showPath()"><b>&#9817;</b></div>
+            <div class="black F2 white-start pawn room piece " onclick="return showPath()"><b>&#9817;</b></div>
+            <div class="white G2 white-start pawn room piece " onclick="return showPath()"><b>&#9817;</b></div>
+            <div class="black H2 white-start pawn room piece " onclick="return showPath()"><b>&#9817;</b></div>
+        </div>                                                                              
+        <div class="row">    
+            <div class="black white-start rook room piece" onclick="return showPath()"><b>&#9814;</b></div>
+            <div class="white white-start knight room piece" onclick="return showPath()"><b>&#9816;</b></div>
+            <div class="black white-start bishop room piece" onclick="return showPath()"><b>&#9815;</b></div>
+            <div class="white white-start queen room piece" onclick="return showPath()"><b>&#9813;</b></div>
+            <div class="black white-start king room piece" onclick="return showPath()"><b>&#9812;</b></div>
+            <div class="white white-start bishop room piece" onclick="return showPath()"><b>&#9815;</b></div>
+            <div class="black white-start knight room piece" onclick="return showPath()"><b>&#9816;</b></div>
+            <div class="white white-start rook room piece" onclick="return showPath()"><b>&#9814;</b></div>
+        </div>
+    </div>
+    <script>
+        const pieces = document.querySelectorAll('.piece');
+        
+        pieces.forEach(piece => {
+          piece.addEventListener('click', function() {
+            // Remove background color from all pieces
+            pieces.forEach(piece => {
+              piece.style.backgroundColor = '';
+              piece.style.boxShadow='';
+            });
+        
+            // Apply background color to the clicked piece
+            this.style.backgroundColor = 'lime';
+            this.style.boxShadow = "inset 2px 2px 4px rgba(0, 0, 0, 0.4), inset -2px -2px 4px rgba(0, 0, 0, 0.4), inset 2px -2px 4px rgba(0, 0, 0, 0.4), inset -2px 2px 4px rgba(0, 0, 0, 0.4)";
+          });
+        });
+
+       let pawn = document.querySelectorAll('.pawn');
+       let rook = document.querySelectorAll('.rook');
+       let bishop= document.querySelectorAll('.bishop');
+       let knight= document.querySelectorAll('.knight');
+
+       pawn.forEach(pawn=>{
+        pawn.addEventListener('click', function(){
+            pawn.forEach(pawn=>{
+                
+            });
+        });
+       });
+
+
+
+    </script>
+</body>
+</html>
